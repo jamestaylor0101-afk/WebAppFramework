@@ -21,7 +21,7 @@ const bestXI = [
 
 
 
-//Tottenham 3-4-3 formation
+/* Tottenham 3-4-3 formation */
 
 const formation = [
     // Forwards
@@ -38,7 +38,7 @@ const formation = [
     ["Hugo Lloris"]
 ];
 
-//Create football pitch formation
+/* Create football pitch formation */
 formation.forEach(function (row) {
 
     const formationRow = $("<div>")
@@ -46,14 +46,14 @@ formation.forEach(function (row) {
 
     row.forEach(function (playerName) {
 
-        //Find matching player from existing array
+        /* Find matching player from existing array */
         const player = bestXI.find(
             p => p.name === playerName
         );
 
         if (!player) return;
 
-        //Player button
+        /* Player button */
         const playerButton = $("<button>")
             .addClass("pitch-player view-player")
             .attr("type", "button")
@@ -61,12 +61,12 @@ formation.forEach(function (row) {
             .attr("aria-label",
                 "View statistics for " + player.name);
 
-        //Shirt symbol
+        /* Shirt symbol */
         const shirt = $("<span>")
             .addClass("player-shirt")
             .text("⚽");
 
-        //Player name
+        /* Player name */
         const name = $("<span>")
             .addClass("pitch-player-name")
             .text(player.name);
@@ -82,7 +82,7 @@ formation.forEach(function (row) {
 
 
 
-//Search form
+/* Search form */
 $("#playerForm").on("submit", function (event) {
     event.preventDefault();
 
@@ -98,7 +98,7 @@ $(document).on("click", ".view-player", function () {
 
     const searchName = $(this).data("player");
 
-    //Find the full name for the dropdown
+    /* Find the full name for the dropdown */
     const selectedPlayer = bestXI.find(
         player => player.search === searchName
     );
@@ -107,7 +107,7 @@ $(document).on("click", ".view-player", function () {
         $("#playerSelect").val(selectedPlayer.name);
     }
 
-    //Search the API using the shorter name
+    /* Search the API using the shorter name */
     fetchPlayer(searchName);
 
     document.getElementById("search")
@@ -115,7 +115,7 @@ $(document).on("click", ".view-player", function () {
 });
 
 
-//API request
+/* API request */
 async function fetchPlayer(playerName) {
 
     $("#playerResult").html(
@@ -158,7 +158,7 @@ async function fetchPlayer(playerName) {
         const player = result.player;
         const stats = result.statistics[0] || {};
 
-        //Build elements using jQuery
+        /* Build elements using jQuery */
         const container = $("<div>");
 
         $("<img>")
