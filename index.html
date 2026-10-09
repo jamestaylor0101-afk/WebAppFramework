@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tottenham Hotspur Player Database</title>
+
+    //Bootstrap 5 CSS
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    //CSS
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    //Navigation
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                Tottenham Hotspur
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu"
+                aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarMenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#search">
+                            Player Search
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#bestXI">
+                            Best XI
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="bg-primary text-white text-center py-5">
+        <div class="container">
+            <h1>Tottenham Hotspur Player Database</h1>
+            <p class="lead">
+                Explore player information and statistics
+                from the 2022 season
+            </p>
+        </div>
+    </header>
+
+    <main class="container my-5">
+
+        //Player Search
+        <section id="search" class="mb-5">
+            <h2 class="mb-4">Search Players</h2>
+
+            <div class="row g-4">
+
+                <div class="col-md-5">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <h3 class="h5 card-title">
+                                Select a Player
+                            </h3>
+
+                            <form id="playerForm">
+                                <label for="playerSelect" class="form-label">
+                                    Player Name
+                                </label>
+
+                                <select id="playerSelect" class="form-select mb-3" required>
+                                    <option value="">
+                                        Choose a player
+                                    </option>
+                                    <option value="Kane">
+                                        Harry Kane
+                                    </option>
+                                    <option value="Heung">
+                                        Son Heung-Min
+                                    </option>
+                                    <option value="Kulusevski">
+                                        Dejan Kulusevski
+                                    </option>
+                                    <option value="Richarlison">
+                                        Richarlison
+                                    </option>
+                                    <option value="Hojbjerg">
+                                        Pierre-Emile Hojbjerg
+                                    </option>
+                                    <option value="Bentancur">
+                                        Rodrigo Bentancur
+                                    </option>
+                                    <option value="Perisic">
+                                        Ivan Perisic
+                                    </option>
+                                    <option value="Romero">
+                                        Cristian Romero
+                                    </option>
+                                    <option value="Dier">
+                                        Eric Dier
+                                    </option>
+                                    <option value="Davies">
+                                        Ben Davies
+                                    </option>
+                                    <option value="Lloris">
+                                        Hugo Lloris
+                                    </option>
+                                </select>
+
+                                <button type="submit" class="btn btn-primary w-100">
+                                    Search Player
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                //Player Results
+                <div class="col-md-7">
+                    <div class="card shadow-sm h-100">
+                        <div class="card-body">
+                            <h3 class="h5 card-title">
+                                Player Information
+                            </h3>
+
+                            <div id="playerResult" aria-live="polite">
+                                <p class="text-muted">
+                                    Select a player to view
+                                    their information.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        //Best XI Formation
+        <section id="bestXI" class="my-5">
+
+            <h2 class="mb-4">Tottenham Best XI - 2022/23</h2>
+
+            <p class="text-muted">
+                Click any player to view their statistics.
+            </p>
+
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-9">
+
+                    <div class="football-pitch">
+
+                        //Players added using jQuery
+                        <div id="bestXIGrid"></div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    //Footer
+    <footer class="bg-dark text-white text-center py-4">
+        <p class="mb-0">
+            Tottenham Hotspur Player Database
+        </p>
+    </footer>
+
+    //jQuery
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js">
+    </script>
+
+    //Bootstrap JavaScript
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+    //JavaScript
+    <script src="script.js"></script>
+
+</body>
+
+</html>
